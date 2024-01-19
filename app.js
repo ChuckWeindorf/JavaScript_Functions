@@ -28,7 +28,7 @@ nameAge("cw", "moo");
 
 function nameAge(userName, age) {
   if (userName.length == 0 || typeof age != "number") {
-    console.log("Incoreect parameters");
+    console.log("Incorect parameters");
   } else {
     const aboveSixteen = `Congratulations ${userName}, you can drive!`;
     const belowSixteen = `Sorry ${userName}, but you need to wait until you're 16.`;
