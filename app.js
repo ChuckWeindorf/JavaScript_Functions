@@ -105,22 +105,25 @@ checkCell(200, 17, 25);
 
 function checkCell(planLimit, day, usage) {
   const thisMontDays = 30;
-  let aveDaily = parseFloat(usage / day).toFixed(1);
-  let daysLeft = thisMontDays - day;
-  let aveMax = parseFloat(planLimit / thisMontDays).toFixed(1);
-  let projected = thisMontDays * aveDaily;
-  let pace = parseFloat((projected - planLimit) / thisMontDays).toFixed(1);
+  const aveDaily = parseFloat(usage / day).toFixed(1);
+  const daysLeft = thisMontDays - day;
+  const aveMax = parseFloat(planLimit / thisMontDays).toFixed(1);
+  const projected = thisMontDays * aveDaily;
+  const pace = parseFloat((projected - planLimit) / thisMontDays).toFixed(1);
 
   console.log(`${day} days used, ${daysLeft} remaining.`);
   console.log(`You are using: ${aveDaily} GB per day on average.`);
   if (aveDaily > aveMax) {
-    console.log(`You are EXCEEDING your average daily available of ${aveMax} GB.`
-    );
+    console.log(`You are EXCEEDING your average daily available of ${aveMax} GB.`);
     console.log(`You are projected to exceed your plan limt by ${projected - planLimit} GB`);
     console.log(`Try to use ${pace} GB each day to stay withing limits.`)
-  } else {
-    console.log(
-      `Go ahead and browse away!  You have ${planLimit - usage} GB remaining.`
-    );
-  }
+  } else if (aveDaily < aveMax) {
+    console.log(`You are below your average daily available of ${aveMax} GB.`);
+    console.log(`Go ahead and browse away!  You have ${planLimit - usage} GB remaining.`);
+    console.log(`Use ${pace * -1} GB each day to stay withing limits.`);}
+  else {
+    console.log(`You use precisely your average daily available of ${aveMax} GB.`);
+    console.log(`We will call you awesome.`);
+  };
+  
 }
