@@ -61,7 +61,11 @@ function quadrant(xaxis, yaxis) {
     } else {
       quadrantLoc += "W";
     }
-    console.log("quadrant " + quadrantLoc);
+    if (quadrantLoc == "NE") {cartesian = "I"}
+    else if (quadrantLoc == "NW") {cartesian = "II"}
+    else if (quadrantLoc == "SW") {cartesian = "III"}
+    else {cartesian = "IV"}
+    console.log("quadrant " + cartesian, quadrantLoc);
   } else if (xaxis != 0) {
     console.log("Point on x axis");
   } else {
