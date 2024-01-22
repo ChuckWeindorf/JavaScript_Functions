@@ -40,13 +40,14 @@ function nameAge(userName, age) {
   }
 }
 // Exercise 3 Section
-
+console.log("EXERCISE 3:\n==========\n");
 quadrant(1, 2);
 quadrant(1, -1);
 quadrant(-1, 1);
 quadrant(-1, -1);
 quadrant(1, 0);
 quadrant(0, 1);
+quadrant(0, 0);
 
 function quadrant(xaxis, yaxis) {
   if (xaxis != 0 && yaxis != 0) {
@@ -68,15 +69,17 @@ function quadrant(xaxis, yaxis) {
     console.log("quadrant " + cartesian, quadrantLoc);
   } else if (xaxis != 0) {
     console.log("Point on x axis");
-  } else {
+  } else if (yaxis != 0) {
     console.log("Point on y axis");
   }
+  else {console.log("Point on origin")};
 }
 
 // Exercise 4 Section
-
+console.log("EXERCISE 4:\n==========\n");
 triangle(1, 2, 1);
 triangle(2, 2, 1);
+triangle(1, 2, 2);
 triangle(2, 2, 2);
 triangle(3, 4, 5);
 
@@ -89,14 +92,14 @@ function triangle(side1, side2, side3) {
     console.log("Really weird non-triangle");
   } else if (side1 == side2 && side2 == side3) {
     console.log("Eqilateral triangle");
-  } else if (side1 == side2 || side1 == side3 || side1 == side3) {
+  } else if (side1 == side2 || side1 == side3 || side2 == side3) {
     console.log("Isosceles triangle");
   } else {
     console.log("Scalene triangle");
   }
 }
 // Exercise 5 Section
-
+console.log("EXERCISE 5:\n==========\n");
 checkCell(100, 15, 56);
 checkCell(200, 17, 25);
 
